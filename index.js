@@ -1,6 +1,20 @@
 'use strict'
 
-//import { Partes } from "./partesForca.js";
+
+
+//Funcionamento do Jogo (Regras Básicas)
+
+//Seleção Aleatória de Palavra: O programa seleciona aleatoriamente uma palavra relacionada aos fundamentos de redes e computadores, como "roteador", "protocolo", "firewall", etc.
+//O jogador inicia com 8 tentativas para adivinhar as letras corretas da palavra oculta.   
+//3. Dicas opcionais (Definida pela equipe)       
+//4. Por exemplo, para o termo "roteador", a dica poderia ser "Dispositivo responsável por encaminhar pacotes de dados entre diferentes redes."
+//5. Adivinhação de Letras: O jogador tenta adivinhar letras uma por uma. Se a letra estiver presente na palavra, ela é revelada na posição correta. 
+    //Caso contrário, o número de tentativas restantes é reduzido.
+//6. Conclusão do Jogo: O jogo continua até que o jogador tenha adivinhado todas as letras corretamente ou tenha esgotado as 8 tentativas.
+
+
+
+
 
 
 function novaDica() {
