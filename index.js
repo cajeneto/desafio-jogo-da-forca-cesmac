@@ -9,8 +9,10 @@ function novaDica() {
     textoDica.setAttribute('class', "dica") // adiciona atributo class com o nome 'dica'; 
     const novaDica = dica.appendChild(textoDica) // cria elemento filho na div 'dica-jogo'
     novaDica.innerHTML=`Dica 2: ` // insere elemento dentro do HTML;
-    var dicaSelecionada = 'Proporciona alta troca de dados entre os equipamentos' // cria string com texto para ser adicionado junto com o elemento que foi criado;
+    var dicaSelecionada = 'Proporciona alta troca de dados entre os equipamentos em até 20km de distância' // cria string com texto para ser adicionado junto com o elemento que foi criado;
     novaDica.innerHTML+=dicaSelecionada // insere string de texto junto com o elemento filho h2 que foi criado.
+    const bntNovaDica = document.querySelector('.bntNovaDica')
+    bntNovaDica.disabled=true
 }
 //novaDica()
 
@@ -22,7 +24,6 @@ function criaConteudo(){
     //const novoConteudo = conteudoJogo.appendChild(adicionaConteudo);
     //const novoConteudo = conteudoJogo.insertBefore(adicionaConteudo, conteudoJogo[0]);
     //novoConteudo.innerHTML='Proporciona alta troca de dados entre os equipamentos'
-
 
 }
 
@@ -94,6 +95,163 @@ const c = document.querySelector('#C').addEventListener('click', () =>{
 })
 
 
+const forcaCab = `<div id="forca">
+<img class="forcaIMG" src="./img/cabca-.png"" alt="">
+</div>`
+
+const forcaCorpo = `<div id="forca">
+<img class="forcaIMG" src="./img/corpo-.png"" alt="">
+</div>`
+
+const forcaBraEsq = `<div id="forca">
+<img class="forcaIMG" src="./img/braco-esq.png"" alt="">
+</div>`
+
+const forcaBraDir = `<div id="forca">
+<img class="forcaIMG" src="./img/braco-dir.png"" alt="">
+</div>`
+
+const forcaPeEsq = `<div id="forca">
+<img class="forcaIMG" src="./img/pe-esq.png"" alt="">
+</div>
+`
+const forcaPeDir = `<div id="forca">
+<img class="forcaIMG" src="./img/pe-dir.png"" alt="">
+</div>`
+
+const forcaOlhos = `<div id="forca">
+<img class="forcaIMG" src="./img/olhos-fim.png"" alt="">
+</div>`
+
+
+const Partes = {
+    cabeca: forcaCab,
+    corpo: forcaCorpo,
+    bracoEsq: forcaBraEsq,
+    bracoDir: forcaBraDir,
+    peEsq: forcaPeEsq,
+    peDir: forcaPeDir,
+    olhos: forcaOlhos,
+}
+
+// CRIA MENSAGEM DE FIM DE JOGO 
+const gameOver = `<div id="forca">
+<img class="forcaIMG" src="/fimdejogo.gif"" alt="">
+</div>`
 
 
 
+
+
+
+const letras = []
+
+function adicionarLetra(letra) {
+    letras.push(letra);
+
+}
+
+// Adicionei um evento para escultar todas as letras clicadas.
+var letrasHTML = document.getElementsByClassName('btnss');
+for (var l = 0; l < letrasHTML.length; l++) {
+    letrasHTML[l].addEventListener("click", function(event) {
+        var letraClicada = event.target.textContent;
+        var letraDisabled = event.target;
+
+        adicionarLetra(letraClicada);
+        console.log(letraClicada)
+        console.log(letras)
+        if(letras.length == 1){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=Partes.cabeca;
+            letraDisabled.disabled=true
+            
+        }
+        if(letras.length == 2){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=Partes.corpo;
+            letraDisabled.disabled=true
+        }
+        if(letras.length == 3){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=Partes.bracoEsq;
+            letraDisabled.disabled=true
+        }
+        if(letras.length == 4){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=Partes.bracoDir;
+            letraDisabled.disabled=true
+        }
+        if(letras.length == 5){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=Partes.peEsq;
+            letraDisabled.disabled=true
+        }
+        if(letras.length == 6){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=Partes.peDir;
+            letraDisabled.disabled=true
+        }
+        if(letras.length == 7){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=Partes.olhos;
+            letraDisabled.disabled=true
+        }
+        // 
+        if(letras.length >= 7){
+            console.log(`letra ${letraClicada} clicada`)
+            var insereCab = document.getElementById('forca');
+            insereCab.innerHTML=gameOver
+            //letraDisabled.disabled=true
+        }
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const contador = []
+console.log(contador)
+
+const s = document.querySelector('#S').addEventListener('click', function() {
+    document.querySelector('#S').disabled = true;
+    var adcS = 'S';
+    contador.push(adcS);
+    contador.join(',');
+    console.log(contador)
+    return adcS;
+}) */
